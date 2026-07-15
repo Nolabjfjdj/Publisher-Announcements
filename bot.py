@@ -26,9 +26,6 @@ GUILD_IDS = [
 DEFAULT_ACTIVE_CHANNELS = {
     1526684169642709063,
     1525633582519943168,
-    1525630561488605204,
-    1526760799618732072,
-    1526761181170368552,
 }
 
 # ---------- Serveur Flask pour le keep-alive (UptimeRobot) ----------
