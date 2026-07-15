@@ -28,6 +28,7 @@ DEFAULT_ACTIVE_CHANNELS = {
     1525633582519943168,
     1525630561488605204,
     1526760799618732072,
+    1526761181170368552,
 }
 
 # ---------- Serveur Flask pour le keep-alive (UptimeRobot) ----------
