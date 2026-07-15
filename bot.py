@@ -26,6 +26,7 @@ GUILD_IDS = [
 DEFAULT_ACTIVE_CHANNELS = {
     1526684169642709063,
     1525633582519943168,
+    1525630561488605204,
 }
 
 # ---------- Serveur Flask pour le keep-alive (UptimeRobot) ----------
@@ -89,8 +90,12 @@ async def on_ready():
 
 @bot.event
 async def on_message(message: discord.Message):
-    # Ignore les messages du bot lui-même
-    if message.author.bot:
+    # Ignore uniquement le bot lui-même et les autres vrais bots.
+    # Les messages envoyés via un webhook ont aussi author.bot=True,
+    # donc on les distingue via message.webhook_id (None = pas un webhook).
+    if message.author.id == bot.user.id:
+        return
+    if message.author.bot and message.webhook_id is None:
         return
 
     # Si le salon est actif, on publie automatiquement le message
